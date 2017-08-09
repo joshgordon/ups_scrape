@@ -1,6 +1,7 @@
 #!/bin/sh
 
 INFLUX_DB_HOST=http://localhost:8086
+DATABASE=grafana
 CURL_OPTS=""
 
 ups_status=$(pwrstat -status)
@@ -18,7 +19,7 @@ echo voltage: $voltage
 echo percent: $percent
 
 
-curl -i -XPOST "$INFLUX_DB_HOST/write?db=grafana" --data-binary "power value=$power_in_watts"
-curl -i -XPOST "$INFLUX_DB_HOST/write?db=grafana" --data-binary "voltage value=$voltage"
-curl -i -XPOST "$INFLUX_DB_HOST/write?db=grafana" --data-binary "percent value=$percent"
+curl -i -XPOST "$INFLUX_DB_HOST/write?db=$DATABASE" --data-binary "power value=$power_in_watts
+voltage value=$voltage
+percent value=$percent"
 
