@@ -35,10 +35,10 @@ try:
 
         load_w = int(load) / 100.0 * RATING_W
 
-        client.publish('gordon/smarthouse/ups/bedroom/load_w', load_w)
-        client.publish('gordon/smarthouse/ups/bedroom/supply_v', voltage)
-        client.publish('gordon/smarthouse/ups/bedroom/battery', battery)
-        client.publish('gordon/smarthouse/ups/bedroom/battery_v', battery_v)
+        client.publish('gordon/smarthouse/ups/office/load_w', load_w)
+        client.publish('gordon/smarthouse/ups/office/supply_v', voltage)
+        client.publish('gordon/smarthouse/ups/office/battery', battery)
+        client.publish('gordon/smarthouse/ups/office/battery_v', battery_v)
 
 
         sleep(delay)
